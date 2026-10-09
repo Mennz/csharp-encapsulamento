@@ -1,6 +1,7 @@
 class Pessoa
 {
-    private string nome;
+    // sem isso o compilador reclama que nome pode ficar nulo
+    private string nome = "";
     private int idade;
 
     public string Nome
