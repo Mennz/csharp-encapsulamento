@@ -6,12 +6,22 @@ class Pessoa
     public string Nome
     {
         get { return nome; }
-        set { nome = value; }
+        set
+        {
+            if (string.IsNullOrWhiteSpace(value))
+                throw new ArgumentException("nome nao pode ser vazio");
+            nome = value;
+        }
     }
 
     public int Idade
     {
         get { return idade; }
-        set { idade = value; }
+        set
+        {
+            if (value < 0)
+                throw new ArgumentException("idade nao pode ser negativa");
+            idade = value;
+        }
     }
 }
